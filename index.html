@@ -1,78 +1,23 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Dockerized-net-tools by dave-tucker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Dockerized-net-tools</h1>
-      <h2 class="project-tagline">Collection of Dockerized Open Source Network Monitoring, Performance and Management Related Tools</h2>
-      <a href="https://github.com/dave-tucker/dockerized-net-tools" class="btn">View on GitHub</a>
-      <a href="https://github.com/dave-tucker/dockerized-net-tools/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/dave-tucker/dockerized-net-tools/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+---
+layout: default
+---
 
-    <section class="main-content">
-      <h1>
-<a id="dockerized-net-tools" class="anchor" href="#dockerized-net-tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>dockerized-net-tools</h1>
+<div class="home">
 
-<h3>
-<a id="a-collection-of-dockerized-open-source-network-monitoring-performance-and-management-related-tools" class="anchor" href="#a-collection-of-dockerized-open-source-network-monitoring-performance-and-management-related-tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Collection of Dockerized Open Source Network Monitoring, Performance and Management Related Tools</h3>
+  <h1 class="page-heading">Posts</h1>
 
-<p>There are some great networking tools out there. The challenge is they often have some finicky dependencies or are for a specific platform or OS. Network routers and switches are becoming more and more like servers, this will include the ability to run Docker on switches. </p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<p>In order to take advantage of the ability to start managing networks with similar tools used in other distributed systems. We are using Docker to learn new applications and share them with the networking community. Please don't hesitate to jump in and contribute. See the bottom of the page for how to contribute!</p>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-<h3>
-<a id="pre-requisites" class="anchor" href="#pre-requisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pre-Requisites</h3>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-<p>This is intended for folks interested in networks and there are no knowledge pre-requisites. If totally new to Docker or virtualization in general it may help to take a look at the free <a href="https://training.docker.com">Docker Training</a> via Docker inc.</p>
-
-<p><strong>Docker Engine</strong>: This is the base Docker component. Simply install Docker engine for your target OS with these <a href="https://docs.docker.com/engine/installation/">instructions</a>. A quick install for Linux is <code>curl -sSL https://get.docker.com/ | sh</code> or using wget with <code>wget -qO- https://get.docker.com/ | sh</code> that executes this script <a href="https://get.docker.com">here</a>. </p>
-
-<p><strong>Docker Compose</strong>: <em>(Optional)</em> Some of the examples may use Docker Compose for multi-container (multi-process) applications stacks. Docker Toolbox is the easiest way to install all of the Docker tools for your environment using these <a href="https://www.docker.com/docker-toolbox">instructions for Windows or Mac</a>. For Linux see <a href="https://docs.docker.com/compose/install/">here</a>.</p>
-
-<h3>
-<a id="tools-and-examples-for-getting-started" class="anchor" href="#tools-and-examples-for-getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tools and Examples for Getting Started</h3>
-
-<p>Below are links to each tools directory in this repository with an example Dockerfile and usage.</p>
-
-<ul>
-<li><p><a href="https://github.com/gopher-net/dockerized-net-tools/tree/master/fping">fping</a> - tool for measuring latency, status and all around ping on steroids. </p></li>
-<li><p><a href="https://github.com/gopher-net/dockerized-net-tools/tree/master/iperf">iperf</a> - extremely versatile tool for measuring network bandwidth and performance. </p></li>
-<li><p><a href="https://github.com/gopher-net/dockerized-net-tools/tree/master/nmap">nmap</a> - security scanner, port scanner and network discovery tool</p></li>
-</ul>
-
-<h3>
-<a id="network-hardware-vendor-docker-support" class="anchor" href="#network-hardware-vendor-docker-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Network Hardware Vendor Docker Support</h3>
-
-<p>We will track and link to the network vendors supporting Docker and this method of tooling for network ops/dev.</p>
-
-<ul>
-<li>Vendors Coming Soon...</li>
-</ul>
-
-<h3>
-<a id="contributing-to-the-net-tools-list" class="anchor" href="#contributing-to-the-net-tools-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing to the Net Tools List</h3>
-
-<p>Please do a pull request with your additions of tools. They don't have to be tools you created or maintain, simply add apps and show how to use it with Docker for simplicity. </p>
-
-<p>If you have any questions about how to do a <a href="https://help.github.com/articles/using-pull-requests/">pull request</a> please open an <a href="https://github.com/gopher-net/dockerized-net-tools/issues">issue</a> for assistance. This is here for networking professionals and network devs to explore, learn and innovate. As such there are no bad questions and no jerks allowed :-) If you find a bug or typo you can either patch it with a pull request (PR) or open a bug in issues.</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/dave-tucker/dockerized-net-tools">Dockerized-net-tools</a> is maintained by <a href="https://github.com/dave-tucker">dave-tucker</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
-</html>
+</div>
